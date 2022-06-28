@@ -2,9 +2,10 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
-import Catalog from "../../components/views/Catalog"
+import Catalog from "../../components/views/Catalog";
+import { getProducts } from '../../utils/call-api';
 
-export default function ProductsList() {
+export default function ProductsList({ products }) {
   return (
     <Layout>
       <Head>
@@ -19,7 +20,22 @@ export default function ProductsList() {
         </Link>
       </h2>
       <h1 className={styles.title}>Products List</h1>
-      <Catalog />
+      <Catalog products={products} />
     </Layout>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  console.log("inside server side props");
+  console.log('query', query);
+
+  const res = await getProducts();
+  const products = res.data;
+  console.log({ products });
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
