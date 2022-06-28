@@ -19,8 +19,4 @@ const Catalog = ({ products }) => {
   );
 };
 
-Catalog.defaultProps = {
-  collection: null,
-};
-
 export default Catalog;
