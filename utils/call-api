@@ -1,9 +1,9 @@
 export async function getProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/catalog/browsing?type=&availability=all&kind=women&page=undefined`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/catalog/browsing?type=&availability=all&kind=women&page=undefined`);
   return res.json();
 }
 
 export async function getProduct(queryString) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/catalog/browsing/${queryString}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/catalog/browsing/${queryString}`);
   return res.json();
 }

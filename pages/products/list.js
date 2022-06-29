@@ -25,13 +25,24 @@ export default function ProductsList({ products }) {
   );
 }
 
-export async function getServerSideProps({ query }) {
-  console.log("inside server side props");
-  console.log('query', query);
+// export async function getServerSideProps() {
+//   console.log("inside server side props in ProductsList");
+
+//   const res = await getProducts();
+//   const products = res.data;
+
+//   return {
+//     props: {
+//       products,
+//     },
+//   };
+// }
+
+export async function getStaticProps() {
+  console.log("inside getStaticProps function in ProductsList");
 
   const res = await getProducts();
   const products = res.data;
-  console.log({ products });
 
   return {
     props: {
@@ -39,3 +50,4 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
+
