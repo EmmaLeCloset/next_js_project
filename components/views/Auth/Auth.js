@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { useState } from "react";
 import styles from "../../../styles/Home.module.css"
+import { signIn } from "../../../actions/auth-modal-actions";
 
 const Auth = ({
   signIn,

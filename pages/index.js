@@ -14,6 +14,11 @@ export default function Home() {
       </Head>
 
       <div className={styles.authBtnContainer}>
+        <button className={styles.logInBtn}>
+              <Link href="/auth">
+                <a>Log In</a>
+              </Link>
+          </button>
         <button className={styles.authBtn}>
             <Link href="/sign-in">
               <a>Sign In</a>

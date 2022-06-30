@@ -133,6 +133,15 @@
   gap: 20px;
 }
 
+.logInBtn {
+  border: 1px solid #f485b8;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #f485b8;
+  font-size: 1.3rem;
+  padding: 6px 12px;
+}
+
 .authBtn {
   border: none;
   background-color: transparent;
